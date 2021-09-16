@@ -2,7 +2,7 @@ import React from 'react';
 import './Table.css';
 
 function Table({table}) {
-    // console.log( table?.sort((a, b) => b.cases["1M_pop"] - a.cases["1M_pop"]).map(x => x.cases["1M_pop"]))
+
     return (
         <div className="table">
            {
@@ -17,7 +17,7 @@ function Table({table}) {
 
            ))
     }
-    {/* {console.log(table.cases)} */}
+  
           
             
         </div>

@@ -5,7 +5,8 @@ import {MenuItem,FormControl,Select,Card,CardContent}from "@material-ui/core";
 import Map from './Component/Map';
 import InfoBox from './Component/InfoBox';
 import Table from './Component/Table';
-import { sortData } from './sort';
+import World from './Component/World';
+import LineGraph from './Component/LineGraph';
 function App() {
   const [countries,setCountries]=useState([]);
   const [country,setCountry]=useState("WorldWide");
@@ -13,6 +14,7 @@ function App() {
   const[cases,setCases]=useState({});
   const [table,setTable]=useState([]);
   const [tablecase,setTableCases]=useState([]);
+  const [world,setWorld]=useState(null);
 
  
 
@@ -53,7 +55,45 @@ const   headers={
     };
 
       axios.request(options).then(function (response) {
-	    console.log(response.data);
+	    // console.log("response ", response);
+
+      const mapped = response?.data?.response?.map(x => ({
+        active: x.cases.active,
+        new:x.cases.new,
+        recovered:x.cases.recovered,
+        total:x.cases.total,
+        deaths_new: x.deaths.new,
+        deaths_total:x.deaths.total,
+      }))
+
+      const getNum = x => isNaN(parseInt(x)) ? 0 : parseInt(x)
+
+      console.log(mapped)
+      const all = mapped.reduce((a, b) => {
+        return {
+        active: a.active + b.active,
+        new: getNum(a.new) + getNum(b.new),
+        recovered:a.recovered+b.recovered,
+        total:a.total+b.total,
+        deaths_new: getNum(a.deaths_new) + getNum(b.deaths_new),
+        deaths_total:a.total+b.total,
+        } 
+      }, {
+        active: 0,
+        new:0,
+        recovered:0,
+        total:0,
+        deaths_new: 0,
+        deaths_total:0,
+      })
+
+setWorld(all)
+
+      // {
+      //   active
+      //   total
+      //   ...
+      // }
       // const sortedData=sortData(response.data);
 
       setTable(response.data);
@@ -83,7 +123,7 @@ const   headers={
 
             axios.request(options).then(function (response) {
               setCountry(countryCode);
-              console.log(response.data);
+              // console.log(response.data.response);
               setcountryInfo(response.data.response[0]);
               setCases(response.data.response[0].cases);
             }).catch(function (error) {
@@ -110,7 +150,7 @@ const   headers={
     
         
         >
-          {/* <MenuItem value={country}>WorldWide</MenuItem> */}
+          <MenuItem value={country} >Select Country </MenuItem>
           {countries.map(key=><MenuItem value={key}>{key}</MenuItem>)}
           
         </Select>
@@ -119,6 +159,10 @@ const   headers={
         </FormControl>
       </div>
 
+<div>
+  {/* {JSON.stringify(world)} */}
+  <World  title="World cases"world={world}/>
+</div>
       <div className="app_stats">
          <InfoBox title="Coronavirus cases" cases={countryInfo?.cases?.new}  total={countryInfo?.cases?.active} />
         <InfoBox  title="Recovered" cases={countryInfo?.cases?.recovered}  total={countryInfo?.cases?.total}/>
@@ -138,7 +182,7 @@ const   headers={
       {/*table*/}
       <Table table={table.response} />
       <h3>WorldWide new</h3>
-      {/*graph*/}
+      <LineGraph/>
       </CardContent>
       </Card>
       
