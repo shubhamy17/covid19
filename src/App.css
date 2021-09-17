@@ -23,7 +23,8 @@ body{
 .app_stats{
   display: flex;
   justify-content:space-between;
-  margin-top: 43px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   
 }
 @media (max-width:990px){

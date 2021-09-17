@@ -9,7 +9,7 @@ import World from './Component/World';
 import LineGraph from './Component/LineGraph';
 function App() {
   const [countries,setCountries]=useState([]);
-  const [country,setCountry]=useState("WorldWide");
+  const [country,setCountry]=useState("");
   const[countryInfo,setcountryInfo]=useState({});
   const[cases,setCases]=useState({});
   const [table,setTable]=useState([]);
