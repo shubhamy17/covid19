@@ -169,13 +169,30 @@ setWorld(all)
   {/* {JSON.stringify(world)} */}
  
   <div className="app_stats">
-         <InfoBox  onClick={e=>setCases('cases')} title="Coronavirus cases" cases={convertnumber(countryInfo?.cases?.new)}  total={convertnumber(countryInfo?.cases?.active)} />
+   
+
+  <InfoBox  onClick={e=>setCases('cases')} title="Coronavirus 🦠 cases ⬆️ " cases={convertnumber(countryInfo?.cases?.new)}  total={convertnumber(countryInfo?.cases?.active)} />
+
+ 
+       
+       
+   
         <InfoBox   onClick={e=>setCases('recovered')}   title="Recovered" cases={convertnumber(countryInfo?.cases?.recovered)}  total={convertnumber(countryInfo?.cases?.total)}/>
-        <InfoBox onClick={e=>setCases('deaths')}  title="Deaths"  cases={convertnumber(countryInfo?.deaths?.new)}  total={convertnumber(countryInfo?.deaths?.total)} /> 
+       
+        
+    
+        <InfoBox onClick={e=>setCases('deaths')}  title="Deaths 🦴"  cases={convertnumber(countryInfo?.deaths?.new)}  total={convertnumber(countryInfo?.deaths?.total)} /> 
+       
       </div>
       <hr/>
-      <h1 style={{color:'white'}}>World Wide Cases</h1>
+      <h1 style={{color:'white'}}>World Wide 🌎 Cases</h1>
   <World  world={world} convertnumber={convertnumber}/>
+  <br/>
+  <hr/>
+  
+
+
+
 </div>
       
      
@@ -196,7 +213,7 @@ setWorld(all)
       <br/><br/><br/><hr/>
       <br/><br/>
 
-      <h3>World Wide New </h3>
+      <h3>World Wide 🌎 </h3>
       <LineGraph  />
       </CardContent>
       </Card>

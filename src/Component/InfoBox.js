@@ -12,7 +12,7 @@ function InfoBox({title,cases,active,red,total,...props}) {
                </Typography>
 
                {/*+120k Number of cases*/}
-               <h2 className={`infobox__cases ${!red && "infobox__cases--green"}`}>{cases}</h2>
+               <h2 className="infobox__cases_recovery">{cases}</h2>
 
                {/*1.2M total*/}
                <Typography className="infobox__total" color="textSecondary">
