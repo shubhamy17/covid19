@@ -143,12 +143,9 @@ setWorld(all)
     <div className="App">
       <div className="app__left">
       <div className="app__header">
-       <div className="headercss">
-          <img src={require('./assets/img/covidlogo.png').default} /> <h1>COVID-19 TRACKER</h1>
-         </div> 
-      
+      <h1>COVID-19 TRACKER</h1>
 
-         <span className="selectcss"> <FormControl className="app_dropdown">
+      <FormControl className="app_dropdown">
         <Select
         variant="outlined"
         onChange={onCountryChange}
@@ -162,22 +159,18 @@ setWorld(all)
         </Select>
         
         
-        </FormControl></span>
+        </FormControl>
       </div>
 
 <div>
   {/* {JSON.stringify(world)} */}
- 
-  <div className="app_stats">
-         <InfoBox  onClick={e=>setCases('cases')} title="Coronavirus cases" cases={convertnumber(countryInfo?.cases?.new)}  total={convertnumber(countryInfo?.cases?.active)} />
-        <InfoBox   onClick={e=>setCases('recovered')}   title="Recovered" cases={convertnumber(countryInfo?.cases?.recovered)}  total={convertnumber(countryInfo?.cases?.total)}/>
-        <InfoBox onClick={e=>setCases('deaths')}  title="Deaths"  cases={convertnumber(countryInfo?.deaths?.new)}  total={convertnumber(countryInfo?.deaths?.total)} /> 
-      </div>
-      <hr/>
-      <h1 style={{color:'white'}}>World Wide Cases</h1>
-  <World  world={world} convertnumber={convertnumber}/>
+  <World  title="World cases"world={world} convertnumber={convertnumber}/>
 </div>
-      
+      <div className="app_stats">
+         <InfoBox red active={cases ==="cases"} onClick={e=>setCases('cases')} title="Coronavirus cases" cases={convertnumber(countryInfo?.cases?.new)}  total={convertnumber(countryInfo?.cases?.active)} />
+        <InfoBox active={cases ==="recovered"} onClick={e=>setCases('recovered')}   title="Recovered" cases={convertnumber(countryInfo?.cases?.recovered)}  total={convertnumber(countryInfo?.cases?.total)}/>
+        <InfoBox red active={cases ==="deaths"} onClick={e=>setCases('deaths')}  title="Deaths"  cases={convertnumber(countryInfo?.deaths?.new)}  total={convertnumber(countryInfo?.deaths?.total)} /> 
+      </div>
      
       <Map/>
       </div>
@@ -189,14 +182,9 @@ setWorld(all)
       <Card className="app_right">
         <CardContent>
           <h3>Live Cases by Country</h3>
-          <br/>
-          <hr/>
       {/*table*/}
       <Table table={table.response} convertnumber={convertnumber} />
-      <br/><br/><br/><hr/>
-      <br/><br/>
-
-      <h3>World Wide New </h3>
+      <h3>WorldWide new </h3>
       <LineGraph  />
       </CardContent>
       </Card>

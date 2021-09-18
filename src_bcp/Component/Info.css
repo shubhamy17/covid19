@@ -1,21 +1,7 @@
 .infobox{
-  display: flex;
-  flex-direction: row;
  flex:1;
  cursor: pointer;
- 
 }
-
-/* .infobox:hover{
- 
-    box-shadow: 10px 30px 60px rgba(0, 0, 0, 0.8);
-    transform: rotateY(20deg);
-  
-} */
-.info_recover{
-  color: greenyellow !important;
-}
-
 .infobox:not(last-child){
     margin-right: 15px;
 }
@@ -49,15 +35,4 @@
     color: lightgreen !important;
 
   }
-  @media (max-width:990px){
-    .infobox{
-      margin-top: 20px;
-      margin-bottom: 20px;
-      margin-right: auto;
-      display: flex;
-    }
-  
-  
-  }
-  
   

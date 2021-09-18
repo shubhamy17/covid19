@@ -1,38 +1,36 @@
 import React from 'react';
+import './Info.css';
 import {Card,CardContent,Typography}from "@material-ui/core";
+import NewCard from './NewCard';
+// import numeral from "numeral";
 
-function World({title,world}) {
+function World({title,world,convertnumber}) {
     return (
         <div>
-            <Card className="infoBox">
-           <CardContent>
-               <Typography  className="infobox__title" color="textSecondary">
-                 {title}
-               </Typography>
+            <div className="infoBox">
+      
                     
                {/*+120k Number of cases*/}
-               <h1>New cases</h1>
-               <h2 className="infobox__cases">{world?.new}</h2>
-               <h1>Active cases</h1>
-               <h2 className="infobox__cases">{world?.active}</h2>
-               <h1>Recovered cases</h1>
-               <h2 className="infobox__cases">{world?.recovered}</h2>
-               <h1>New Deaths cases</h1>
-               <h2 className="infobox__cases">{world?.deaths_new}</h2>
+               <div className="newcardcontainer">
+               <NewCard title="New Cases" desc={convertnumber(world?.new)}/>
+               <NewCard title="Active cases" desc={convertnumber(world?.new)}/>
+               <NewCard title="Recovered " desc={convertnumber(world?.new)} recovery={1}/>
+               <NewCard title="Deaths " desc={convertnumber(world?.new)}/>
+               </div>
 
-               {/*1.2M total*/}
-               <Typography className="infobox__total" color="textSecondary">
-                      Total Cases :{world?.total}
-                      <br/>
-                      Total Deaths:{world?.deaths_total}
-               </Typography>
-
+               <div className="newcardcontainer">
+               <NewCard title="Total Cases" desc={convertnumber(world?.total)} bigcard={1}/>
+               
+               <NewCard title="Total Deaths" desc={convertnumber(world?.deaths_total)} bigcard={1} />
+               </div>
+        
+              
 
 
-            </CardContent>
+        
 
 
-       </Card>
+       </div>
             
         </div>
     );

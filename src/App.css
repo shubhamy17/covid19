@@ -8,6 +8,17 @@
   justify-content: space-between;
   
 }
+.app__dropdown {
+  background-color: white;
+}
+
+
+
+.app__header > h1 {
+  color: #fc3c3c;
+  font-size: 2rem;
+}
+
 body{
   background-color: #f5f6fa;
 }
@@ -17,6 +28,12 @@ body{
   padding: 20px;
 
 }
+.app_right{
+  background-color: #151019 !important;
+}
+ h3{
+  color: white;
+}
 .app__left{
   flex: 0.9;
 }
@@ -25,11 +42,54 @@ body{
   justify-content:space-between;
   margin-top: 30px;
   margin-bottom: 30px;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   
 }
+.app_right{
+  height: auto !important;
+}
+
+.headercss{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+}
+
+.headercss > img {
+  height: 100px;
+  align-self: center;
+}
+
+.headercss > h1{
+  color: white;
+}
+
+.selectcss{
+  background-color: white !important;
+  border-radius: 8rem;
+  box-shadow: wheat;
+}
+
 @media (max-width:990px){
   .App{
     flex-direction: column;
+  }
+  .app_stats{
+    flex-direction: column;
+   
+  }
+  .headercss > h1{
+    font-size: small;
+  }
+  .headercss > img{
+    align-self: center;
+    height: 50px;
+  }
+  .app__header{
+    height: 30px;
+    padding: 10px;
   }
 
 
