@@ -12,10 +12,10 @@ function World({title,world,convertnumber}) {
                     
                {/*+120k Number of cases*/}
                <div className="newcardcontainer">
-               <NewCard title="New Cases" desc={convertnumber(world?.new)}/>
-               <NewCard title="Active cases" desc={convertnumber(world?.new)}/>
-               <NewCard title="Recovered " desc={convertnumber(world?.new)} recovery={1}/>
-               <NewCard title="Deaths " desc={convertnumber(world?.new)}/>
+               <NewCard title="New Cases ⬆️" desc={convertnumber(world?.new)}/>
+               <NewCard title="Active cases 🤒" desc={convertnumber(world?.new)}/>
+               <NewCard title="Recovered 💪🏻 " desc={convertnumber(world?.new)} recovery={1}/>
+               <NewCard title="Deaths 💀" desc={convertnumber(world?.new)}/>
                </div>
 
                <div className="newcardcontainer">

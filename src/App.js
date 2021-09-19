@@ -2,7 +2,6 @@ import React ,{useState,useEffect}from 'react';
 import './App.css';
 import axios from 'axios';
 import {MenuItem,FormControl,Select,Card,CardContent}from "@material-ui/core";
-import Map from './Component/Map';
 import InfoBox from './Component/InfoBox';
 import Table from './Component/Table';
 import World from './Component/World';
@@ -90,13 +89,6 @@ const   headers={
 
 setWorld(all)
 
-      // {
-      //   active
-      //   total
-      //   ...
-      // }
-      // const sortedData=sortData(response.data);
-
       setTable(response.data);
       
       }).catch(function (error) {
@@ -144,7 +136,7 @@ setWorld(all)
       <div className="app__left">
       <div className="app__header">
        <div className="headercss">
-          <img src={require('./assets/img/covidlogo.png').default} /> <h1>COVID-19 TRACKER</h1>
+          <img src={require('./assets/img/covidlogo.png').default} /> <h1>COVID-19 TRACKER </h1>
          </div> 
       
 
@@ -169,23 +161,19 @@ setWorld(all)
   {/* {JSON.stringify(world)} */}
  
   <div className="app_stats">
-   
 
-  <InfoBox  onClick={e=>setCases('cases')} title="Coronavirus 🦠 cases ⬆️ " cases={convertnumber(countryInfo?.cases?.new)}  total={convertnumber(countryInfo?.cases?.active)} />
+  <InfoBox   title="Coronavirus 🦠 cases ⬆️ " cases={convertnumber(countryInfo?.cases?.new)}  total={convertnumber(countryInfo?.cases?.active)} />
 
- 
-       
-       
-   
-        <InfoBox   onClick={e=>setCases('recovered')}   title="Recovered" cases={convertnumber(countryInfo?.cases?.recovered)}  total={convertnumber(countryInfo?.cases?.total)}/>
-       
-        
     
-        <InfoBox onClick={e=>setCases('deaths')}  title="Deaths 🦴"  cases={convertnumber(countryInfo?.deaths?.new)}  total={convertnumber(countryInfo?.deaths?.total)} /> 
+        <InfoBox   className="infobox__cases--green"  title="Recovered 💪🏻" cases={convertnumber(countryInfo?.cases?.recovered)}  total={convertnumber(countryInfo?.cases?.total)}/>
+      
+    
+        <InfoBox title="Deaths 💀"  cases={convertnumber(countryInfo?.deaths?.new)}  total={convertnumber(countryInfo?.deaths?.total)} /> 
        
-      </div>
+     </div>
       <hr/>
-      <h1 style={{color:'white'}}>World Wide 🌎 Cases</h1>
+    
+      <h2 style={{color:'white'}}>World Wide 🌎 Cases</h2>
   <World  world={world} convertnumber={convertnumber}/>
   <br/>
   <hr/>
@@ -196,7 +184,7 @@ setWorld(all)
 </div>
       
      
-      <Map/>
+ 
       </div>
      
     

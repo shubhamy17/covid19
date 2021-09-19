@@ -5,7 +5,7 @@
 
  cursor: pointer;
  
-     background: linear-gradient(to bottom, #fe8683 0%,#ff9d9b 100%);
+     /* background: linear-gradient(to bottom, #fe8683 0%,#ff9d9b 100%); */
     filter: pr
 }
 
@@ -15,14 +15,15 @@
     transform: rotateY(20deg);
   
 } */
+ .infobox__cases_recovery1{
+  background-color: #f5f6fa !important;
+}
 
 .infobox:not(last-child){
     margin-right: 15px;
 }
 
-.infobox--selected {
-    border-top: 10px solid greenyellow;
-  }
+
   
   .infobox--red {
     border-color: red;
