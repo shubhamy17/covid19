@@ -3,9 +3,10 @@
 
 ## PROBLEM STATEMENT
 To create a covid case tracker application. In this application a user should be able to check statistics of covid cases across various countries.
-
 In the project directory, you can run:
+
 <img src="https://github.com/shubhamy17/covid19/blob/main/covidfif.gif"/>
+<a href="https://covid19trackershubham.netlify.app/)">Visit website</a>
 
 ### FEATURES
     1)App showcases the total number of cases, deaths and recovered cases across the world.
@@ -22,9 +23,8 @@ In the project directory, you can run:
 
 ### Stack 
  Reactjs
-### Deployment
 
- Link:-(https://covid19trackershubham.netlify.app/)
+
 
 
 
