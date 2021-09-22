@@ -6,7 +6,7 @@ To create a covid case tracker application. In this application a user should be
 In the project directory, you can run:
 
 <img src="https://github.com/shubhamy17/covid19/blob/main/covidfif.gif"/>
-<a href="https://covid19trackershubham.netlify.app/)">Visit website</a>
+<a href="https://covid19trackershubham.netlify.app/">Visit website</a>
 
 ### FEATURES
     1)App showcases the total number of cases, deaths and recovered cases across the world.
