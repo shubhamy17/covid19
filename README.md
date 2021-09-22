@@ -13,7 +13,7 @@ In the project directory, you can run:
     4)By default list is sorted on the basis of “new cases”
     5)User are able to filter via Continent or Country
     6)Users are able to sort the list according to “deaths per 1 Million population” or “cases per 1 Million population”.
-    7)world map shows which countries are hit most by COVID 19 using color coding.
+    7)world Line Graph 12 day Covid cases.
 ### HOW TO RUN ON LOCAL SYSTEM
   1)Clone the repository.
   2)npm install run 
