@@ -1,17 +1,18 @@
 .table{
     margin-top: 20px;
+    width: 100%;
+
+}
+.outer{
     overflow-y: scroll;
     height: 400px;
     color:white;
-    /* background-color: white; */
+
+    
 }
-.table tr{
-    display: flex;
-    justify-content: space-between;
+.active{
+    color:#cc1034 !important;
 }
-.table td{
-    padding: 0.5rem;
-}
-.table tr:nth-of-type{
-    background-color: #f3f2f8;
+.recovered{
+    color:lightgreen;
 }

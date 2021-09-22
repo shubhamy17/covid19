@@ -11,6 +11,9 @@
 .app__dropdown {
   background-color: white;
 }
+.tableHead td{
+  cursor: pointer;
+}
 
 
 
@@ -28,9 +31,9 @@ body{
   padding: 20px;
 
 }
-.app_right{
+/* .app_right{
   background-color: #151019 !important;
-}
+} */
  h3{
   color: white;
 }
@@ -64,6 +67,9 @@ body{
 .headercss > img {
   height: 100px;
   align-self: center;
+}
+.tableHead td button{
+  cursor: pointer;
 }
 
 .headercss > h1{

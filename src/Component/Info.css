@@ -1,20 +1,12 @@
 .infobox{
   display: flex;
   flex-direction: row;
- flex:1;
-
- cursor: pointer;
- 
-     /* background: linear-gradient(to bottom, #fe8683 0%,#ff9d9b 100%); */
-    filter: pr
+  flex:1;
+  cursor: pointer;
+  filter: pr
 }
 
-/* .infobox:hover{
- 
-    box-shadow: 10px 30px 60px rgba(0, 0, 0, 0.8);
-    transform: rotateY(20deg);
-  
-} */
+
  .infobox__cases_recovery1{
   background-color: #f5f6fa !important;
 }
